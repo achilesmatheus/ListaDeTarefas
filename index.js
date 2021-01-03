@@ -69,7 +69,7 @@ const filter = (event) => {
   filterList(arrayClassNames)
 }
 
-var parentDivOfButton = button => button.target.parentElement.parentElement
+const parentDivOfButton = button => button.target.parentElement.parentElement
 const classNames = ['completedItem', 'incompletedItem']
 
 // Buttons functions
@@ -77,7 +77,7 @@ const removeTaskFromList = button => parentDivOfButton(button).remove()
 const checkTaskAsComplete = button => classNames.forEach(className =>
   parentDivOfButton(button).classList.toggle(className))
 
-// Event Listners
+// Event Listners for the buttons of the created tasks
 const setButtonsEvent = ({ deleteButton, completeButton }) => {
   deleteButton.addEventListener('click', removeTaskFromList)
   completeButton.addEventListener('click', checkTaskAsComplete)
