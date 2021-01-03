@@ -57,7 +57,7 @@ const setDisplayType = (item, type) => item.style.display = type
 const clearFilter = ulElement => ulElement.querySelectorAll('.todo')
   .forEach(item => setDisplayType(item, 'none'))
 
-const filter = (event) => {
+const filter = event => {
   clearFilter(ulTodoList)
 
   const selectedIndex = event.target.selectedIndex
@@ -69,13 +69,13 @@ const filter = (event) => {
   filterList(arrayClassNames)
 }
 
-const parentDivOfButton = button => button.target.parentElement.parentElement
+const divToDo = event => event.target.closest('.todo')
 const classNames = ['completedItem', 'incompletedItem']
 
 // Buttons functions
-const removeTaskFromList = button => parentDivOfButton(button).remove()
-const checkTaskAsComplete = button => classNames.forEach(className =>
-  parentDivOfButton(button).classList.toggle(className))
+const removeTaskFromList = event => divToDo(event).remove()
+const checkTaskAsComplete = event => classNames.forEach(className => divToDo(event)
+  .classList.toggle(className))
 
 // Event Listners for the buttons of the created tasks
 const setButtonsEvent = ({ deleteButton, completeButton }) => {
