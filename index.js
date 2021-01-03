@@ -25,7 +25,7 @@ const setElementsProperties = ({ divElement, liElement, deleteButton, completeBu
   deleteButton.innerText = 'x'
   deleteButton.classList.add('delete_btn')
 
-  completeButton.innerText = 'ok'
+  completeButton.innerText = '✓'
   completeButton.classList.add('complete_btn')
 }
 
